@@ -1,5 +1,8 @@
 import Typography from '@mui/material/Typography';
+import {Route, Routes} from 'react-router';
 import BookListContainer from './BookListContainer';
+import BookDetailContainer from './BookDetailContainer';
+
 
 function App() {
     return (
@@ -7,7 +10,10 @@ function App() {
             <Typography variant="h2" component="h2" data-test="heading">
                 Bookish
             </Typography>
-            <BookListContainer />
+            <Routes>
+                <Route path="/" element={<BookListContainer/>}/>
+                <Route path="/books/:id" element={<BookDetailContainer/>}/>
+            </Routes>
         </div>
     );
 }

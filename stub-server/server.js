@@ -25,13 +25,12 @@ server.get('/books', async (req, res, next) => {
     const db = router.db;
     res.json((await db.get('books', null))
         .sort((book1, book2) => book1.id < book2.id ? -1 : 1));
-    // const books = await db.get('books');
-    // console.log(JSON.stringify(books.sort((book1, book2) => book1.id < book2.id ? -1 : 1)));
-    // res.json(books);
-
 });
+
+
 server.delete('/books', async (req, res, next) => {
     if (req.query['_cleanup']) {
+        console.log('Database has been wiped out!!!!');
         const db = router.db;
         db.set('books', []).write();
     }
