@@ -1,9 +1,7 @@
-import {useParams} from 'react-router';
-import useBook from './useBook';
+import useBook from '../useBook';
 import BookDetail from './BookDetail';
 
 const BookDetailContainer = () => {
-    const {id} = useParams<string>();
     const {book} = useBook();
 
     return (

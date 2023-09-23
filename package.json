@@ -31,6 +31,7 @@
     "rebuild-db": "cp ./stub-server/db.old.json ./stub-server/db.json",
     "eject": "react-scripts eject",
     "e2e": "cypress run",
+    "stub-server-old": "json-server --watch stub-server/books.json --port 8080",
     "stub-server": "cd stub-server; node server.js; cd .."
   },
   "eslintConfig": {
@@ -55,7 +56,7 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/plugin-transform-private-property-in-object": "^7.22.11",
     "cors": "^2.8.5",
-    "cypress": "^13.1.0",
+    "cypress": "^13.2.0",
     "json-server": "^0.17.3"
   },
   "jest": {

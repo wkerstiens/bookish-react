@@ -1,6 +1,6 @@
 const jsonServer = require('json-server');
 const server = jsonServer.create();
-const router = jsonServer.router('db.json');
+const router = jsonServer.router('books.json');
 const middlewares = jsonServer.defaults();
 const cors = require('cors');
 
@@ -21,14 +21,14 @@ server.use(bodyParser.urlencoded({extended: true}));
 
 server.use(middlewares);
 
-server.get('/books', async (req, res, next) => {
-    const db = router.db;
-    res.json((await db.get('books', null))
-        .sort((book1, book2) => book1.id < book2.id ? -1 : 1));
-});
+// server.get('/books', async (req, res, next) => {
+//     const db = router.db;
+//     res.json((await db.get('books', null))
+//         .sort((book1, book2) => book1.id < book2.id ? -1 : 1));
+// });
 
 
-server.delete('/books', async (req, res, next) => {
+server.delete('/books', async (req, res) => {
     if (req.query['_cleanup']) {
         console.log('Database has been wiped out!!!!');
         const db = router.db;

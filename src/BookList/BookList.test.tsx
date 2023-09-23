@@ -1,8 +1,7 @@
 import {screen} from '@testing-library/react';
 import BookList from './BookList';
-import type {Book} from './types';
-import renderWithRouter from './renderWithRouter';
-
+import type {Book} from '../types';
+import renderWithRouter from '../renderWithRouter';
 
 describe('BookList', () => {
     it('renders books', async () => {
